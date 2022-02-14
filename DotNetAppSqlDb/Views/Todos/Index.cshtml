@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Todo>
+
+@{ ViewBag.Title = "Home"; }
+
+<h3>Lista de Ações</h3>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            @Html.DisplayName("Descrição")
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CreatedDate)*@
+            @Html.DisplayName("Abertura")
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Done)*@
+            @Html.DisplayName("Finalizado")
+        </th>
+        <th>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Done)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Excluir", "Delete", new { id = item.ID })
+    </td>
+</tr>}
+
+</table>

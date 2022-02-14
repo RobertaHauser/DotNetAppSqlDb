@@ -1,0 +1,49 @@
+﻿@model DotNetAppSqlDb.Models.Todo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@*<h3>Delete</h3>*@
+
+<h3>Confirmar exclusão?</h3>
+<div>
+    @*<h4>Todo</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            @Html.DisplayName("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CreatedDate)*@
+            @Html.DisplayName("Abertura")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Done)*@
+            @Html.DisplayName("Finalizado")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Done)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

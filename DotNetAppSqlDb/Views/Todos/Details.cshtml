@@ -1,0 +1,43 @@
+﻿@model DotNetAppSqlDb.Models.Todo
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h3>Detalhes</h3>
+
+<div>
+    @*<h4>Todo</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            @Html.DisplayName("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CreatedDate)*@
+            @Html.DisplayName("Abertura")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Done)*@
+            @Html.DisplayName("Finalizado")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Done)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
